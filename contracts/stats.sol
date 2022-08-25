@@ -2,7 +2,7 @@
 pragma solidity 0.8.15;
 
 // Import this file to use console.log
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
@@ -97,7 +97,7 @@ contract Stats is Context{
         return true;
     }
 
-    function addMinter(address _minter) external onlyGame returns(bool){
+    function addMinter(address _minter) external onlyDAO returns(bool){
         require(!isMinter[_minter],"ERR:AM");//AM => Already Minter
 
         require(_minter != address(0), "ERR:NA");//NA => Null Address
